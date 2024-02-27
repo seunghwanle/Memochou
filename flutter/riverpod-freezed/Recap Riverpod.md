@@ -5,7 +5,7 @@
 
 
 ### Package 設定
-```
+```yaml
 // pubspec.yaml
 dependencies:
   
@@ -28,7 +28,7 @@ Providerを定義する部分で、Widgetで共通に使用したいデータを
 
 #### 1-1 Provider
 
-```
+```dart
 final valueProvider = Provider<int>((ref) {
   return 0;
 });
@@ -38,7 +38,7 @@ final valueProvider = Provider<int>((ref) {
 
 #### 1-2 StateProvider
 
-```
+```dart
 final counterStateProvider = StateProvider<int>((ref) {
   return 0;
 });
@@ -48,7 +48,7 @@ StateProviderは、状態を変更できるProvider。内部の状態には stat
 
 #### 1-3 StateNotifierProvider
 
-```
+```dart
 class Counter extends StateNotifier<int> {
   Counter() : super(0);
 
@@ -67,7 +67,7 @@ StateNotifierProviderは、状態だけでなく一部のロジックも保存�
 
 #### ProviderScope
 
-```
+```dart
 void main() {
   runApp(
     ProviderScope(
@@ -80,7 +80,7 @@ Providerを使用するためには、まずアプリ全体を ProviderScope で
 
 #### WidgetRef
 
-```
+```dart
 // Provider 정의
 final valueProvider = Provider<int>((ref) {
   return 0;
