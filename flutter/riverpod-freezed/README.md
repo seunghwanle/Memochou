@@ -6,5 +6,4 @@
 - Freezed
 
 ##### # したこと
-- Riverpod, Freezed 一緒に使ってみる。
-- 復讐
+- Riverpod, Freezed 復讐、 使ってみる。
