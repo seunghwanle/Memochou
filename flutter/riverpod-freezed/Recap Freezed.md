@@ -8,7 +8,7 @@
 ### Why we need freezed ?
 
 title, price, thumbnailのみを持つシンプルなモデルクラスだが、よく使用されるメソッドを定義するためにコードの量が長くなりすぎている。
-```
+```dart
 // freezed 未使用
 @immutable
 class EventModel {
@@ -45,7 +45,7 @@ class EventModel {
  　、、、省略、、、 
 ```
 
-```
+```dart
 // freezed 使用
 part 'event_model.freezed.dart';
 part 'event_model.g.dart';
@@ -69,7 +69,7 @@ Freezedを使用すると、以前のコードを上記のように簡潔に書�
 ### How to use freezed
 
 ### Package 設定
-```
+```yaml
 // pubspec.yaml
 dependencies:
   freezed_annotation: ^2.4.1
@@ -87,7 +87,7 @@ dev_dependencies:
 
 ### Model クラス作成
 
-```
+```dart
 part 'event_model.freezed.dart';
 part 'event_model.g.dart';
  
