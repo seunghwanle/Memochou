@@ -35,6 +35,9 @@ class Home extends ConsumerWidget {
       body: Center(
         child: Consumer(
           builder: (context, ref, _) {
+            const String userNamePlaceholder = '名前を登録してください';
+            const String userAgePlaceholder = '年齢を登録してください';
+
             final count = ref.watch(counterStateNotifierProvider);
             final user = ref.watch(userStateNotifierProvider);
 
@@ -46,7 +49,7 @@ class Home extends ConsumerWidget {
                   onPressed: () {
                     _showEditModal(context, ref);
                   },
-                  child: Text('${user.name} / ${user.age}'),
+                  child: Text('${user.name ?? userNamePlaceholder} / ${user.age?.toString() ?? userAgePlaceholder}'),
                 ),
                 Text('$count'),
               ],
@@ -80,10 +83,10 @@ class Home extends ConsumerWidget {
   void _showEditModal(BuildContext context, WidgetRef ref) {
     final nameController = TextEditingController();
     final ageController = TextEditingController();
-    final person = ref.watch(userStateNotifierProvider);
+    final user = ref.watch(userStateNotifierProvider);
 
-    nameController.text = person.name ?? '';
-    ageController.text = person.age?.toString() ?? '';
+    nameController.text = user.name ?? '';
+    ageController.text = user.age?.toString() ?? '';
 
     showDialog(
       context: context,
